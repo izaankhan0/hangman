@@ -91,6 +91,10 @@ function enterLetter() {
         looseCounter++
         console.log("loose counter is:")
         console.log(looseCounter)
+        if (looseCounter === 6){
+            document.querySelector('.screen').classList.add('loss')
+                    document.querySelector('.loss').innerHTML += `<p>The Word was: " ${word} "</p><h3>You have Lost! thats sad</h3>`
+        }
 
     }
 }
