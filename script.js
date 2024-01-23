@@ -10,6 +10,20 @@ function insertLetter() {
     console.log("hi");
     enterLetter();
 }
+
+let hitEnter1 = document.querySelector('.inp-1');
+    hitEnter1.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            insertPress();
+        }
+    });
+    let hitEnter2 = document.querySelector('.inp-2');
+    hitEnter2.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            insertLetter();
+        }
+    });
+
 function playAgain() {
     setInterval(function() {
         document.querySelector('.screen').classList.remove('win');
@@ -97,4 +111,5 @@ function enterLetter() {
         }
 
     }
+    document.querySelector('.inp-2').value = ''
 }
