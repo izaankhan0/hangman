@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Hanging</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <h1>Public Hanging</h1>
     <div class="container">
-        <h1>Public Hanging</h1>
         <div class="diagram">
             <img src="./images/0.png" alt="">
         </div>
@@ -16,21 +18,22 @@
             <input type="text" class="inp-1" placeholder="Enter your Word">
             <button onclick="insertPress()">Insert</button>
         </div>
+        <div class="ans">
+            <div class="inp-left">
+    
+                <input type="text" class="inp-2" placeholder="Enter a letter">
+                <button onclick="insertLetter()">Enter</button>
+            </div>
+    
+            <div class="dashes">
+    
+            </div>
+        </div>
     </div>
 
-    <div class="ans">
-        <div class="inp-left">
-            
-            <input type="text" class="inp-2" placeholder="Enter a letter">
-            <button onclick="insertLetter()">Enter</button>
-        </div>
 
-        <div class="dashes">
-            
-        </div>
-    </div>
     <div class="result">
-        
+
     </div>
 
     <div class="screen">
@@ -39,4 +42,5 @@
 
     <script src="./script.js"></script>
 </body>
+
 </html>
