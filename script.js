@@ -10,6 +10,21 @@ function insertLetter() {
     console.log("hi");
     enterLetter();
 }
+function playAgain() {
+    setInterval(function() {
+        document.querySelector('.screen').classList.remove('win');
+    }, 1000);
+    
+    setInterval(function() {
+        document.querySelector('.screen').classList.remove('loss');
+    }, 1000);
+
+    setTimeout(function() {
+        // Reload the website after 1200 milliseconds
+        location.reload();
+    }, 1200);
+}
+
 
 function getWord() {
     document.querySelector('.dashes').innerHTML = "";
@@ -49,6 +64,16 @@ function enterLetter() {
                 console.log(dashArray)
                 dashArray[k].classList.add('letterSpace')
                 dashArray[k].innerHTML = char.toUpperCase()
+                console.log(dashArray.length)
+                console.log(letterHolder.length)
+
+                let fullDec = document.querySelectorAll('.letterSpace')
+                if (fullDec.length === letterHolder.length){
+                    document.querySelector('.screen').classList.add('win')
+                    document.querySelector('.win').innerHTML += `<p>The Word was: " ${word} "</p><h3>You have Won! Congrats!</h3>`
+                }
+                
+                
             }
         }
     } else {
