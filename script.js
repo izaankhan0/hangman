@@ -99,10 +99,11 @@ function enterLetter() {
     }
 
     if (flag1) {
-        document.querySelector('.result').innerHTML = "<h2 class='present'>Present</h2>";
+        document.querySelector('.result').innerHTML = `<h2 class='present'>Present</h2> <p>Wrong Letters: ${looseCounter}</p>`;
     } else {
-        document.querySelector('.result').innerHTML = "<h2 class='absent'>Absent</h2>";
         looseCounter++
+        document.querySelector('.diagram').innerHTML = `<img src="./images/${looseCounter}.png" alt="hangman image">`
+        document.querySelector('.result').innerHTML = `<h2 class='absent'>Absent</h2><p>Wrong Letters: ${looseCounter}</p>`;
         console.log("loose counter is:")
         console.log(looseCounter)
         if (looseCounter === 6){
