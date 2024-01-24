@@ -113,7 +113,7 @@ function enterLetter() {
         console.log(looseCounter)
         if (looseCounter === 6){
             document.querySelector('.screen').classList.add('loss')
-                    document.querySelector('.loss').innerHTML += `<p>The Word was: " ${word.toUpperCase()} "</p><h3>You have Lost! thats sad</h3>`
+                    document.querySelector('.loss').innerHTML += `<p>The Word was: " ${word.toUpperCase()} "</p><h3 class="absent">You have Lost! thats sad</h3>`
         }
 
     }
