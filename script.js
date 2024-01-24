@@ -45,7 +45,7 @@ function playAgain() {
 
 function getWord() {
     document.querySelector('.dashes').innerHTML = "";
-    word = document.querySelector('.inp-1').value;
+    word = document.querySelector('.inp-1').value.toLowerCase();
     console.log(word);
     document.querySelector('.inp-1').value = '';
 
@@ -70,7 +70,7 @@ function enterLetter() {
     
     document.querySelector('.result').innerHTML = "";
     let flag1 = false;
-    let char = document.querySelector('.inp-2').value;
+    let char = document.querySelector('.inp-2').value.toLowerCase();
 
     if (char.length === 1) {
         // console.log(char.length);
