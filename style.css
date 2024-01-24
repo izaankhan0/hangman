@@ -282,3 +282,9 @@ h3{
     width: 300px;
   }
 }
+
+@media (max-width:390px){
+    h1{
+        transform: scale(0.8);
+    }
+}
