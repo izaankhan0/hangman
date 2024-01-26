@@ -1,6 +1,7 @@
 let word = '';
 let letterHolder = [];  // Declare letterHolder in the outer scope
 let looseCounter = 0;
+let arr9 = []
 
 function insertPress() {
     getWord();
@@ -10,7 +11,6 @@ function insertPress() {
 }
 
 function insertLetter() {
-    console.log("hi");
     enterLetter();
 }
 
@@ -46,7 +46,7 @@ function playAgain() {
 function getWord() {
     document.querySelector('.dashes').innerHTML = "";
     word = document.querySelector('.inp-1').value.toLowerCase();
-    console.log(word);
+    // console.log(word);
     document.querySelector('.inp-1').value = '';
 
     letterHolder = [];  // Reset letterHolder
@@ -77,13 +77,13 @@ function enterLetter() {
         for (let k = 0; k < word.length; k++) {
             if (char === word[k]) {
                 flag1 = true;
-                console.log(k)
+                // console.log(k)
                 let dashArray = document.querySelectorAll('.dash')
-                console.log(dashArray)
+                // console.log(dashArray)
                 dashArray[k].classList.add('letterSpace')
                 dashArray[k].innerHTML = char.toUpperCase()
-                console.log(dashArray.length)
-                console.log(letterHolder.length)
+                // console.log(dashArray.length)
+                // console.log(letterHolder.length)
 
                 let fullDec = document.querySelectorAll('.letterSpace')
                 if (fullDec.length === letterHolder.length){
@@ -95,7 +95,7 @@ function enterLetter() {
             }
         }
     } else {
-        console.log(char.length);
+        // console.log(char.length);
         alert('Only Enter One letter smartash');
         // document.querySelector('.result').innerHTML = "";
         document.querySelector('.inp-2').value = '';
@@ -109,13 +109,21 @@ function enterLetter() {
         looseCounter++
         document.querySelector('.diagram').innerHTML = `<img src="./images/${looseCounter}.png" alt="hangman image">`
         document.querySelector('.result').innerHTML = `<h2 class='absent'>The Letter "${char.toUpperCase()}" is Absent :(</h2><p class="result-p result-p-green">Wrong Letters:  ${looseCounter}/6</p>`;
-        console.log("loose counter is:")
-        console.log(looseCounter)
+        // console.log("loose counter is:")
+        // console.log(looseCounter)
         if (looseCounter === 6){
             document.querySelector('.screen').classList.add('loss')
                     document.querySelector('.loss').innerHTML += `<p>The Word was: " ${word.toUpperCase()} "</p><h3 class="absent">You have Lost! thats sad</h3>`
         }
 
+        arr9.push(char)
+        console.log(arr9)
+        console.log(looseCounter -1)
+        console.log(arr9[looseCounter -1])
+        let currentWrongChar = arr9[looseCounter -1]
+        console.log(currentWrongChar)
+        document.querySelector('.table-row').innerHTML
+        += `<td>${currentWrongChar}</td>`
     }
     document.querySelector('.inp-2').value = ''
 
