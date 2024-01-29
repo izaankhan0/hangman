@@ -120,7 +120,7 @@ function enterLetter() {
         console.log(arr9)
         console.log(looseCounter -1)
         console.log(arr9[looseCounter -1])
-        let currentWrongChar = arr9[looseCounter -1]
+        let currentWrongChar = arr9[looseCounter -1].toUpperCase()
         console.log(currentWrongChar)
         document.querySelector('.table-row').innerHTML
         += `<div class="table-data">${currentWrongChar}</div>`
