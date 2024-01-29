@@ -123,7 +123,7 @@ function enterLetter() {
         let currentWrongChar = arr9[looseCounter -1]
         console.log(currentWrongChar)
         document.querySelector('.table-row').innerHTML
-        += `<td>${currentWrongChar}</td>`
+        += `<div class="table-data">${currentWrongChar}</div>`
     }
     document.querySelector('.inp-2').value = ''
 
