@@ -1,7 +1,44 @@
 let word = '';
-let letterHolder = [];  // Declare letterHolder in the outer scope
+let letterHolder = [];
 let looseCounter = 0;
 let arr9 = []
+
+
+
+function playAgain() {
+    looseCounter = 0;
+    arr9 = [];
+    letterHolder = [];
+    word = '';
+    hitEnter1 = []
+    hitEnter2 = []
+    dashArray = []
+    char = ''
+    currentWrongChar = ''
+    document.querySelector('.diagram').innerHTML = `<img src="./images/0.png" alt="hangman image">`
+    document.querySelector('.table').innerHTML = '<div class="table-row"></div>'
+    document.querySelector('.result').innerHTML = '<h2>Enter a Letter</h2><p class="result-p result-p-green">Wrong Letters: 0/6 <p>'
+    document.querySelector('.dashes').innerHTML = "";
+    document.querySelector('.container').innerHTML = '<div class="diagram"><img src="./images/0.png" alt=""></div><div class="letters"><input type="text" class="inp-1" placeholder="Enter your Word"><button onclick="insertPress()">Insert</button></div><div class="ans stage-1"><div class="inp-left"><input type="text" class="inp-2" placeholder="Enter a letter"><button onclick="insertLetter()">Enter</button></div><div class="dashes"></div><div class="result"><h2>Enter a Letter</h2><p class="result-p result-p-green">Wrong Letters: 0/6 </p></div><div class="table"><div class="table-row"></div></div></div>'
+
+    document.querySelector('.screen').innerHTML = '<button onclick="playAgain()">Play Again</button>'
+    document.querySelector('.screen').classList.remove('win')
+    document.querySelector('.screen').classList.remove('loss')
+
+    hitEnter1 = document.querySelector('.inp-1');
+    hitEnter1.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            insertPress();
+        }
+    });
+    hitEnter2 = document.querySelector('.inp-2');
+    hitEnter2.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            insertLetter();
+        }
+    });
+}
+
 
 function insertPress() {
     getWord();
@@ -27,20 +64,6 @@ let hitEnter1 = document.querySelector('.inp-1');
         }
     });
 
-function playAgain() {
-    setInterval(function() {
-        document.querySelector('.screen').classList.remove('win');
-    }, 1000);
-    
-    setInterval(function() {
-        document.querySelector('.screen').classList.remove('loss');
-    }, 1000);
-
-    setTimeout(function() {
-        // Reload the website after 1200 milliseconds
-        location.reload();
-    }, 1200);
-}
 
 
 function getWord() {
